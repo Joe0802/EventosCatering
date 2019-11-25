@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head th:replace="layout/layout :: head"></head>
+<body>
+	<header th:replace="layout/layout :: header"></header>
+
+	<div class="container">
+
+
+		<div style="margin-top: 25px" class="card text-center  bg-dark mb-3" >
+			<div class="card-header text-white">Lista de Servicios</div>
+			<div class="card-body">
+			
+				<div th:if="${dangerDel}" class="alert alert-danger" role="alert">
+					<span th:text="${dangerDel}"></span>
+				</div>
+			
+				<div class="card text-center" th:each="servicio : ${servicios}" style="margin-bottom:15px">
+				  <div class="card-header" >
+				    <a  th:text="${servicio.servicioNombre}" ></a>
+				  </div>
+				  <div class="card-body">
+				    <a th:text="'S/.'+' '+${servicio.monto}" >Precio</a>
+				    <p class="card-text" th:text="${servicio.descripcion}" ></p>
+				    <a th:href="@{ '/evento/escoger/servicio/' + ${servicio.servicioId} }" class="btn btn-primary">Lo quiero</a>
+				  </div>
+				  <div class="card-footer text-muted">
+				   Promoción por 2 días
+				  </div>
+			   </div>
+
+			</div>
+			
+		</div>
+
+	</div>
+
+	<footer th:replace="layout/layout :: footer"></footer>
+</body>
+</html>
+
+
+
+
+
+

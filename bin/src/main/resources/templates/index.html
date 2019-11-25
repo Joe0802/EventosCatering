@@ -1,0 +1,342 @@
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>EventLab</title>
+<!-- custom-theme -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords"
+	content="prezzie Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+<script type="application/x-javascript">
+	 addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+		function hideURLbar(){ window.scrollTo(0,1); } 
+</script>
+<!-- //custom-theme -->
+<link rel="stylesheet" th:href="@{/css/bootstrap.css}" type="text/css"
+	media="all" />
+<!-- font-awesome-icons -->
+<link rel="stylesheet" th:href="@{/css/font-awesome.css}">
+<link rel="stylesheet" th:href="@{/css/fontawesome.min.css}">
+<link rel="stylesheet" th:href="@{/css/solid.min.css}">
+<link rel="stylesheet" th:href="@{/css/owl.carousel.css}">
+<link rel="stylesheet" th:href="@{/css/style.css}" type="text/css"
+	media="all" />
+</head>
+<body>
+	<!-- banner -->
+	<div class="banner_top" id="home">
+		<div data-vide-bg="/video/gift-packs"
+			th:data-vide-bg="@{/video/gift-packs}">
+			<div class="center-container">
+				<div class="w3_agile_header">
+					<div class="w3_agileits_logo">
+						<h1>
+							<a th:href="@{/index}">EventLab<span>Eventos y
+									Catering</span></a>
+						</h1>
+					</div>
+					<div class="w3_menu">
+						<div class="agileits_w3layouts_banner_info">
+
+							<form action="#" method="post">
+								<input type="search" name="search" placeholder=" " required="">
+								<input type="submit" value="Search">
+							</form>
+						</div>
+						<div class="top-nav">
+							<nav class="navbar navbar-default">
+
+								<!-- Collect the nav links, forms, and other content for toggling -->
+								<div class="collapse navbar-collapse"
+									id="bs-example-navbar-collapse-1">
+									<ul class="nav navbar-nav">
+										<li class="home-icon"><a th:href="@{/index}"><span
+												class="fa fa-home" aria-hidden="true"></span></a></li>
+										<li>
+										
+										<li class="nav-item" sec:authorize="isAnonymous()"><a class="nav-link"
+											th:href="@{/login}">Iniciar Sesion</a></li>
+										<li><a href="gallery.html">Galeria</a></li>
+										<li><a href="buynow.html">Nosotros</a></li>
+										<li><a href="contact.html">Contacto</a></li>
+									</ul>
+									<div class="clearfix"></div>
+								</div>
+							</nav>
+						</div>
+					</div>
+
+					<div class="clearfix"></div>
+				</div>
+				<!-- banner-text -->
+				<div class="slider">
+					<div class="callbacks_container">
+						<ul class="rslides callbacks callbacks1" id="slider4">
+							<li>
+								<div class="agileits-banner-info">
+									<h4>XDVariedad de Servicios</h4>
+									<h3>Solo escoge el que más te guste</h3>
+								</div>
+							</li>
+							<li>
+								<div class="agileits-banner-info">
+									<h4>Sonrisas y Diversión</h4>
+									<h3>Haciendo tu evento más entretenido!</h3>
+								</div>
+							</li>
+							<li>
+								<div class="agileits-banner-info">
+									<h4>Deseas realizar un evento</h4>
+									<h3>Únete a nosotros y sorpréndete</h3>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- //banner -->
+
+
+	<!-- About -->
+	<div class="about" id="about">
+		<div class="container"></div>
+	</div>
+	<!-- //about -->
+	<!--we-offer -->
+	<div class="features">
+		<div class="container">
+			<div class="heading-setion-w3ls">
+				<h2 class="title-w3layouts">Qué ofrecemos</h2>
+			</div>
+			<div class="col-md-4 servies-agileinfo">
+				<p class="pink-w3ls">Haciendo tus eventos más interesantes</p>
+				<p class="para-w3agileits">Nosotros ofrecemos una cantidad
+					asombrosa de servicios y descuentos.</p>
+			</div>
+			<div class="col-md-4 servies-agileinfo">
+				<ul>
+					<li><i class="fa fa-diamond" aria-hidden="true"></i>Día de las
+						Madres</li>
+					<li><i class="fa fa-diamond" aria-hidden="true"></i>San
+						Valentín</li>
+					<li><i class="fa fa-diamond" aria-hidden="true"></i>Bodas</li>
+					<li><i class="fa fa-diamond" aria-hidden="true"></i>Aniversarios</li>
+					<li><i class="fa fa-diamond" aria-hidden="true"></i>Fiestas</li>
+					<li><i class="fa fa-diamond" aria-hidden="true"></i>Tonasos</li>
+				</ul>
+			</div>
+			<div class="col-md-4 servies-agileinfo">
+				<ul>
+					<li><i class="fa fa-diamond" aria-hidden="true"></i>Quinceañeros</li>
+					<li><i class="fa fa-diamond" aria-hidden="true"></i>Nuevo Bebé</li>
+					<li><i class="fa fa-diamond" aria-hidden="true"></i>Trabajos</li>
+					<li><i class="fa fa-diamond" aria-hidden="true"></i>Cumpleaños</li>
+					<li><i class="fa fa-diamond" aria-hidden="true"></i>Graduaciones</li>
+					<li><i class="fa fa-diamond" aria-hidden="true"></i>Regalos</li>
+				</ul>
+				<div class="clearfix"></div>
+			</div>
+		</div>
+	</div>
+	<!-- team -->
+	<div class="team" id="team">
+		<div class="container">
+			<div class="heading-setion-w3ls">
+				<h3 class="title-w3layouts">
+					Nuesto Equipo<i class="fa fa-bell-o" aria-hidden="true"></i><i
+						class="fa fa-bell" aria-hidden="true"></i>
+				</h3>
+			</div>
+			<div class="col-md-6 team-right">
+				<div class="team1">
+					<div class="col-md-4 team-info">
+						<h4>Robison Sánchez</h4>
+						<p>como el TROLAKO</p>
+						<div class="social-icons">
+							<a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+							<a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+							<a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+						</div>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+				<div class="team2">
+					<div class="col-md-4 team-info">
+						<h4>Alexander Girón</h4>
+						<p>como CHICO NESTLE</p>
+						<div class="social-icons">
+							<a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+							<a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+							<a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+						</div>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+
+				<div class="team3">
+					<div class="col-md-4 team-info">
+						<h4>Joseph Poma</h4>
+						<p>como CHICO PERCEBE</p>
+						<div class="social-icons">
+							<a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+							<a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+							<a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+						</div>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+	</div>
+	<!-- //team -->
+	<!-- services -->
+	<div class="services">
+		<div class="container">
+			<div class="w3l-about-grids">
+				<div class="col-md-6 w3ls-about-left">
+					<div class="heading-setion-w3ls">
+						<h3 class="title-w3layouts white-agileits">
+							Características <i class="fa fa-bell-o" aria-hidden="true"></i><i
+								class="fa fa-bell white-agileits" aria-hidden="true"></i>
+						</h3>
+					</div>
+					<div class="agileits-icon-grid">
+						<div class="icon-left hvr-radial-out">
+							<i class="fa fa-cog" aria-hidden="true"></i>
+						</div>
+						<div class="icon-right">
+							<h5>Garantaría de una gran estructura de eventos</h5>
+							<p class="para-w3-agile">Nuestra confiabilidad sobre una gran
+								organización para los eventos solicitados es nuestra prioridad.</p>
+						</div>
+						<div class="clearfix"></div>
+					</div>
+					<div class="agileits-icon-grid">
+						<div class="icon-left hvr-radial-out">
+							<i class="fa fa-heart" aria-hidden="true"></i>
+						</div>
+						<div class="icon-right">
+							<h5>Todo Evento es realizado con amor</h5>
+							<p class="para-w3-agile">Nuestro interés es que la persona
+								obtenga una gran experiencia en su evento.</p>
+						</div>
+						<div class="clearfix"></div>
+					</div>
+					<div class="agileits-icon-grid">
+						<div class="icon-left hvr-radial-out">
+							<i class="fa fa-paper-plane" aria-hidden="true"></i>
+						</div>
+						<div class="icon-right">
+							<h5>Entrega de Servicios</h5>
+							<p class="para-w3-agile">Siempre pendientes sobre el
+								desarrollo y el envío de los productos hacia el evento.</p>
+						</div>
+						<div class="clearfix"></div>
+					</div>
+				</div>
+				<div class="col-md-6 w3ls-about-right">
+					<div class="heading-setion-w3ls">
+						<h3 class="title-w3layouts white-agileits">
+							Ellos dicen: <i class="fa fa-bell-o" aria-hidden="true"></i><i
+								class="fa fa-bell white-agileits" aria-hidden="true"></i>
+						</h3>
+					</div>
+					<div class="w3ls-about-right-img">
+						<div class="test-gri1">
+							<div id="owl-demo2" class="owl-carousel">
+								<div class="test-grid1">
+									<img src="images/team1.jpg" alt="" class="img-r">
+									<h4>Mark Henry</h4>
+									<span>Cliente 1</span>
+									<p>Una gran experiencia en mi evento, gran coordinación.</p>
+								</div>
+								<div class="agile">
+									<div class="test-grid1">
+										<img src="images/team2.jpg" alt="" class="img-r">
+										<h4>Joseph Carl</h4>
+										<span>Cliente 2</span>
+										<p>Evite toda la chamba de la organización.</p>
+									</div>
+								</div>
+								<div class="agile">
+									<div class="test-grid1">
+										<img src="images/team3.jpg" alt="" class="img-r">
+										<h4>John Mark</h4>
+										<span>Cliente 3</span>
+										<p>Gran compañía, no defrauda.</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+		</div>
+	</div>
+	<!-- //services -->
+
+	<!-- js -->
+	<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+	<!-- //js -->
+	<script src="js/responsiveslides.min.js"></script>
+	<script>
+		// You can also use "$(window).load(function() {"
+		$(function() {
+			// Slideshow 4
+			$("#slider4").responsiveSlides({
+				auto : true,
+				pager : true,
+				nav : false,
+				speed : 500,
+				namespace : "callbacks",
+				before : function() {
+					$('.events').append("<li>before event fired.</li>");
+				},
+				after : function() {
+					$('.events').append("<li>after event fired.</li>");
+				}
+			});
+
+		});
+	</script>
+	<!-- for-Clients -->
+	<script src="js/owl.carousel.js"></script>
+	<!-- requried-jsfiles-for owl -->
+	<script>
+		$(document).ready(function() {
+			$("#owl-demo2").owlCarousel({
+				items : 1,
+				lazyLoad : false,
+				autoPlay : true,
+				navigation : false,
+				navigationText : false,
+				pagination : true,
+			});
+		});
+	</script>
+
+	<script th:src="@{/js/minicart.min.js}"></script>
+	<script>
+		// Mini Cart
+		paypal.minicart.render({
+			action : '#'
+		});
+
+		if (~window.location.search.indexOf('reset=true')) {
+			paypal.minicart.reset();
+		}
+	</script>
+	<footer th:fragment="footer">
+		<script src="js/jquery.vide.min.js"></script>
+		<script src="js/jquery.nicescroll.js"></script>
+		<script src="js/scripts.js"></script>
+		<script type="text/javascript" src="js/bootstrap-3.1.1.min.js"></script>
+	</footer>
+</body>
+</html>

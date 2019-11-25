@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout/layout :: head">
+<meta charset="utf-8">
+</head>
+<body>
+	<header th:replace="layout/layout :: header"></header>
+
+	<div class="container" style="margin-top:25px">
+
+
+		<div class="card">
+			<div class="card-header">Registrar Evento</div>
+			<div class="card-body">
+			<div th:if="${dangerRegister}" class="alert alert-danger" role="alert">
+  					<span th:text="${dangerRegister}"></span>
+				</div>
+
+				<form th:action="@{/evento/save}" th:object="${evento}" 
+					method="post">
+					
+					
+					<div class="form-group" style="display:none">
+						<label for="Id">Id:</label> 
+						<input type="text" class="form-control" 
+							th:field="*{eventoId}" readonly="readonly" >
+					</div>
+					<div class="form-group">
+						<label for="nombre">Nombre:</label> 
+						<input type="text" class="form-control" 
+							placeholder="Nombre " maxlength="30" 
+							th:field="*{nombre}" required>
+					</div>
+					
+					<div class="form-group">
+						<label for="especialidad">Categoria:</label> 
+						<select th:field="*{categoria}" class="form-control">
+					      <option th:each="especial : ${categorias}"
+					      	th:value="${especial.id}" th:text="${especial.descripcion}"></option>
+					    </select>
+						
+					</div>
+					
+					<div class="form-group">
+						<label for="descrip">Descripcion:</label> 
+						<textarea class="form-control" id="descripcion"  th:field="*{descripcion}" rows="3"  maxlength="255"></textarea>
+					</div>		
+
+					
+					<button type="submit" class="btn btn-primary">
+						<i class="fas fa-save"></i> Grabar
+					</button>
+					<a th:href="@{/usuario}" class="btn btn-danger"> 
+						<i class="fas fa-undo"></i> Cancelar 
+					</a>
+				</form>
+
+			</div>
+		</div>
+
+
+	</div>
+
+	<footer th:replace="layout/layout :: footer"></footer>
+</body>
+</html>

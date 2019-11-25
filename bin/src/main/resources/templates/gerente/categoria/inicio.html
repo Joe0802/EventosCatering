@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head th:replace="layout/layout :: head"></head>
+<body>
+	<header th:replace="layout/layout :: header"></header>
+
+	<div class="container">
+
+	
+		<div  class="card text-center">
+			<div class="card-header">Lista de Categorias</div>
+			<div class="card-body">
+				<div th:if="${succesRegister}" class="alert alert-success" role="alert">
+  					<span th:text="${succesRegister}"></span>
+				</div>
+				
+				<div th:if="${dangerDel}" class="alert alert-danger" role="alert">
+  					<span th:text="${dangerDel}"></span>
+				</div>
+			
+				<table class="table table-striped">
+					<thead>
+						<tr>
+							<th scope="col">#</th>
+							<th scope="col">Descripcion</th>
+							<th scope="col"></th>
+						</tr>
+					</thead>
+					<tbody th:if="${categorias}" th:each="evento : ${categorias}">
+						<tr>
+							<th scope="row" th:text="${evento.id}"></th>
+							<td th:text="${evento.descripcion}">Mark</td>
+							
+							<td>
+								
+								<a th:href="@{ '/gerente/categoria/edit/' + ${evento.id} }" class="btn btn-warning"> 
+									<i class="fas fa-edit"></i> 
+								</a>
+								<a th:href="@{ '/gerente/categoria/del/' + ${evento.id} }" class="btn btn-danger"> 
+									<i class="fas fa-trash-alt"></i> 
+								</a>							
+							</td>
+						</tr>						
+					</tbody>
+					<tbody th:if="!${categorias}" >
+						<tr>
+							
+							<td  colspan="5" >No hay categorias</td>
+
+							
+						</tr>						
+					</tbody>
+				</table>
+
+			</div>
+			<div class="card-footer text-muted">
+				<a th:href="@{/gerente/categoria/nuevo}" class="btn btn-primary"><i
+					class="fas fa-file-alt"></i> Nueva Categoria</a>
+			</div>
+			
+			
+		</div>
+
+	</div>
+
+	<footer th:replace="layout/layout :: footer"></footer>
+</body>
+</html>
+
+
+
+
+
+

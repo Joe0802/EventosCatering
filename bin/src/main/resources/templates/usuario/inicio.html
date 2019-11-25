@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<<<<<<< HEAD
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+=======
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+>>>>>>> Evento Catering v2.0
+<head th:replace="layout/layout :: head"></head>
+<body>
+	<header th:replace="layout/layout :: header"></header>
+
+<<<<<<< HEAD
+	<div class="container">
+
+		<h1>Lista de evento</h1>
+
+		<div class="card text-center">
+			<div class="card-header">Lista de eventos</div>
+			<div class="card-body">
+				
+				<div th:if="${dangerDel}" class="alert alert-danger" role="alert">
+  					<span th:text="${dangerDel}"></span>
+				</div>
+			
+=======
+	<div class="container" sec:authorize="hasRole('ROLE_CLIENTE')">
+
+
+		<div style="margin-top: 25px" class="card text-center">
+			<div class="card-header">Lista de eventos</div>
+			<div class="card-body">
+				<div th:if="${succesRegister}" class="alert alert-success"
+					role="alert">
+					<span th:text="${succesRegister}"></span>
+				</div>
+
+				<div th:if="${dangerDel}" class="alert alert-danger" role="alert">
+					<span th:text="${dangerDel}"></span>
+				</div>
+
+>>>>>>> Evento Catering v2.0
+				<table class="table table-striped">
+					<thead>
+						<tr>
+							<th scope="col">#</th>
+<<<<<<< HEAD
+							<th scope="col">Nombre de evento</th>
+							<th scope="col">servicio</th>
+							<th scope="col">telefono</th>
+							<th scope="col"></th>
+						</tr>
+					</thead>
+					<tbody th:each="usuario: ${usuarios}">
+						<tr>
+							<th scope="row" th:text="${usuario.usuarioId}"></th>
+							<td th:text="${usuario.nombre}">Mark</td>
+																		
+							<td th:text="${usuario.telefono}">@mdo</td>
+							<td>
+								
+								<a th:href="@{ '/usuario/edit/' + ${usuario.usuarioId} }" class="btn btn-warning"> 
+									<i class="fas fa-edit"></i> 
+								</a>
+								<a th:href="@{ '/usuario/del/' + ${usuario.usuarioId} }" class="btn btn-danger"> 
+									<i class="fas fa-trash-alt"></i> 
+								</a>							
+							</td>
+						</tr>						
+=======
+							<th scope="col">Nombre</th>
+							<th scope="col">Servicio</th>
+							<th scope="col">Monto</th>
+							<th scope="col"></th>
+						</tr>
+					</thead>
+					<tbody th:if="${eventos}" th:each="evento : ${eventos}">
+						<tr>
+							<th scope="row" th:text="${evento.eventoId}"></th>
+							<td th:text="${evento.nombre}">Mark</td>
+							<td th:text="${evento.servicio.servicioNombre}">@mdo</td>
+							<td th:text="${evento.servicio.monto}">@mdo</td>
+							<td>
+
+								<button th:if="!${evento.comprobante.estadoPago}" type="button"
+									class="btn btn-primary" data-toggle="modal"
+									th:data-target="'#exampleModalCenter' + ${evento.eventoId}">
+									<i class="fas fa-handshake"></i>
+								</button> <a th:href="@{ '/evento/info/' + ${evento.eventoId} }"
+								class="btn btn-info"> <i class="fas fa-info"></i>
+							</a> <a th:if="!${evento.comprobante.estadoPago}"
+								th:href="@{ '/evento/edit/' + ${evento.eventoId} }"
+								class="btn btn-warning"> <i class="fas fa-edit"></i>
+							</a> <a th:if="!${evento.comprobante.estadoPago}"
+								th:href="@{ '/evento/del/' + ${evento.eventoId} }"
+								class="btn btn-danger"> <i class="fas fa-trash-alt"></i>
+							</a>
+							</td>
+						</tr>
+					</tbody>
+					<tbody th:if="!${eventos}">
+						<tr>
+
+							<td colspan="5">No tienes eventos, Que esperas en crear el
+								tuyo ?</td>
+
+
+						</tr>
+>>>>>>> Evento Catering v2.0
+					</tbody>
+				</table>
+
+			</div>
+			<div class="card-footer text-muted">
+<<<<<<< HEAD
+				<a th:href="@{/usuario/nuevo}" class="btn btn-primary"><i class="fas fa-file-alt"></i> Nuevo evento</a>
+			</div>
+=======
+				<a th:href="@{/evento/nuevo}" class="btn btn-primary"><i
+					class="fas fa-file-alt"></i> Nuevo evento</a>
+			</div>
+
+			<div th:if="${eventos}" th:each="evento : ${eventos}"
+				class="modal fade"
+				th:id="'exampleModalCenter'  + ${evento.eventoId}" tabindex="-1"
+				role="dialog"
+				th:aria-labelledby="'exampleModalCenterTitle'  + ${evento.eventoId}"
+				aria-hidden="true">
+				<form name="formulario"
+					th:action="@{'/evento/pay/' + ${evento.eventoId}}">
+					<div class="modal-dialog modal-dialog-centered" role="document">
+						<div class="modal-content">
+							<div class="modal-header">
+								<h5 class="modal-title"
+									th:id="'exampleModalCenterTitle'  + ${evento.eventoId}"
+									th:text="${evento.nombre}+ '  S/.' + ${evento.servicio.monto}"></h5>
+								<button type="button" class="close" data-dismiss="modal"
+									aria-label="Close">
+									<span aria-hidden="true">&times;</span>
+								</button>
+							</div>
+							<div class="modal-body">
+								<div class="dropdown" style="margin-bottom: 10px">
+									<label for="exampleFormControlSelect1">Método de pago</label> <select
+										class="form-control" id="exampleFormControlSelect1"
+										required="required">
+										<option>Visa</option>
+										<option>Master Card</option>
+									</select>
+								</div>
+								<div class="input-group mb-3">
+									<div class="input-group-prepend">
+										<span class="input-group-text" id="basic-addon1">💳</span>
+									</div>
+									<input type="number" class="form-control" min="10000"
+										placeholder="# Tarjeta" required="required">
+								</div>
+
+
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-secondary"
+									data-dismiss="modal">Cerrar</button>
+								<button type="submit" class="btn btn-primary">Pagar</button>
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>
+
+>>>>>>> Evento Catering v2.0
+		</div>
+
+	</div>
+
+<<<<<<< HEAD
+=======
+
+
+
+>>>>>>> Evento Catering v2.0
+	<footer th:replace="layout/layout :: footer"></footer>
+</body>
+</html>
+
+
+
+
+
+
